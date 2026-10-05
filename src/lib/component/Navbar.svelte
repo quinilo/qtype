@@ -1,8 +1,12 @@
 <script>
 </script>
 
-<header>
+<header class="">
     <nav>
-        <h1>type</h1>
+        <a href="/"><h2>type</h2></a>
     </nav>
 </header>
+
+<style>
+
+</style>

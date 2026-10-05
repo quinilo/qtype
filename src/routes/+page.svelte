@@ -3,10 +3,10 @@
 
 <section id="hero">
     <div class="flex-center flex-column">
-        <h2>Welcome</h2>
+        <h1>Welcome</h1>
         <div class="split">
-            <a href="/test" class="btn btn-primary">Start test</a>
-            <a href="/test" class="btn">Documentation</a>
+            <a href="/learn" class="btn">Documentation</a>
+            <a href="/lesson" class="btn btn-primary">Start test</a>
         </div>
     </div>
 </section>
