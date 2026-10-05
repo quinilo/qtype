@@ -34,7 +34,7 @@
     <button class="btn" on:click={() => {inLesson.set(false)}}>Back to lesson select</button>
 {:else}
     <section id="select-lesson" class="flex-center">
-        <div class="highlight flex-column flex-center">
+        <div class="highlight flex-column flex-center ">
             <h3>Lessons</h3>
             {#each lessons as lesson}
                 <button class="btn" on:click={() => {startLesson(lesson.content)}
@@ -47,6 +47,10 @@
 <style>
     button {
         width: 100% ;
+    }
+
+    #select-lesson div {
+        min-width: 200px;
     }
 </style>
 
