@@ -1,0 +1,34 @@
+:root {
+    --primary: #5967ff;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("/fonts/Roboto.ttf");
+}
+
+body {
+    background: #161c22;
+    color: white;
+    font-family: "Roboto", serif;
+}
+
+h1, h2, h3 {
+    color: var(--primary);
+}
+
+.split {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
