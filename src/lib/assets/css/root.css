@@ -1,5 +1,6 @@
 :root {
     --primary: #5967ff;
+    --secondary: #c9c9c9;
 }
 
 @font-face {
@@ -37,5 +38,13 @@ h1, h2, h3 {
 
 .flex-column {
     flex-direction: column;
+}
+
+.secondary {
+    color: var(--secondary);
+}
+
+.margin-5 {
+    margin: 5px
 }
 

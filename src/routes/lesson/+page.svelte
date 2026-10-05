@@ -30,6 +30,8 @@
 {#if $inLesson}
     <Lesson originalText="{$content}">
     </Lesson>
+
+    <button class="btn" on:click={() => {inLesson.set(false)}}>Back to lesson select</button>
 {:else}
     <section id="select-lesson" class="flex-center">
         <div class="highlight flex-column flex-center">

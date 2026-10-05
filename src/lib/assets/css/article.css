@@ -1,0 +1,18 @@
+#article {
+    max-width: 550px;
+    background-color: rgb(95 95 95 / 0.21);
+    margin-inline: auto;
+    padding: 30px;
+}
+
+img {
+    max-width: 550px;
+}
+
+h3 {
+    font-size: 25px;
+}
+
+p {
+    color: var(--secondary);
+}
