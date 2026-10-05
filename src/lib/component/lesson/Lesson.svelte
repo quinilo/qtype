@@ -3,8 +3,9 @@
     import {writable} from "svelte/store";
     import Cursor from "#lib/component/lesson/Cursor.svelte";
 
-    let originalText = ""
-    let text = writable("Hallo Welt")
+    let { originalText = '' } = $props();
+
+    let text = writable(originalText)
     let ended = writable(false)
     let started = writable(false)
     let errors = 0
@@ -29,7 +30,6 @@
 
         function start() {
             startTimestamp = Date.now()
-            originalText = $text
 
             console.log("debug: starting")
             started.set(true)
