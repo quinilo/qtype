@@ -2,8 +2,9 @@
     import {onMount} from "svelte";
     import {writable} from "svelte/store";
     import Cursor from "#lib/component/lesson/Cursor.svelte";
+    import RankBadge from "#lib/component/lesson/RankBadge.svelte";
 
-    let { originalText = '' } = $props();
+    let {originalText = ''} = $props();
 
     let text = writable(originalText)
     let ended = writable(false)
@@ -51,11 +52,18 @@
 
     <section id="summary" class="highlight">
 
-        <h3>You are done!</h3>
+        <h3>Geschafft!</h3>
         <ul>
-            <li>Errors: {errors}</li>
+            <li>Fehler: {errors}</li>
             <li>WPM: {wpm}</li>
         </ul>
+
+        <div class="flex-center flex-column">
+            <h3>Deine persönliche Einschätzung:</h3>
+            <RankBadge score={wpm-errors}></RankBadge>
+            <p>Die persönliche einschätzung ist ungeschönt und brutal ehrlich, sie sagt dir genau wo du stehst.</p>
+            <p></p>
+        </div>
 
     </section>
 
@@ -63,9 +71,18 @@
 
     <section id="test">
 
-        <h3>Type the text</h3>
+        <div class="flex-center">
+            <h3>
+                {#if $started}
+                    Lesson started!
+                {:else}
+                    Start typing the text...
+                {/if}
+            </h3>
+        </div>
 
-        <div id="display" class="highlight"><Cursor/>{$text}</div>
+        <div id="display" class="highlight">
+            <Cursor/>{$text}</div>
 
     </section>
 

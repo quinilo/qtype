@@ -8,7 +8,7 @@
     let lessons = [
         {
             name: "Hello World",
-            content: "Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World"
+            content: "Hello World Hello World"
         },
         {
             name: "Lorem",
