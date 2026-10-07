@@ -3,6 +3,7 @@
     import {writable} from "svelte/store";
     import Cursor from "#lib/component/lesson/Cursor.svelte";
     import RankBadge from "#lib/component/lesson/RankBadge.svelte";
+    import {statsCookie} from "#lib";
 
     let {originalText = ''} = $props();
 
@@ -41,6 +42,8 @@
             let words = originalText.split(" ").length
 
             wpm = Math.round((words / seconds) * 60)
+
+            statsCookie.saveHighscore(wpm - errors)
 
             ended.set(true)
         }

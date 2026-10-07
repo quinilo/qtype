@@ -16,3 +16,11 @@ h3 {
 p {
     color: var(--secondary);
 }
+
+@media screen and (max-width: 750px){
+
+    img {
+        width: 90%;
+    }
+
+}

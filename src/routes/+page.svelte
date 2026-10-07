@@ -1,4 +1,6 @@
 <script>
+    import Highscore from "#lib/component/Highscore.svelte";
+    import Benefits from "#lib/component/Benefits.svelte";
 </script>
 
 <section id="hero">
@@ -9,12 +11,19 @@
     </div>
 </section>
 
-<section id="benefits">
+<Highscore></Highscore>
 
-</section>
+<Benefits></Benefits>
+
+<div class="footer-space"></div>
 
 <style>
     #hero {
         min-height: 200px;
+        margin-top: 80px;
+    }
+
+    .footer-space {
+        height: 70px;
     }
 </style>

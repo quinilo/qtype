@@ -1,4 +1,4 @@
-<footer class="flex-center highlight">
+<footer class="flex-center">
 
     <div>developed by quinilo</div>
     <a href="https://github.com/quinilo/qtype">Source code</a>
@@ -7,8 +7,16 @@
 
 <style>
     footer {
-        padding: 20px;
-        margin-top: auto;
         justify-content: space-around;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        background-color: #252f40
+    }
+
+    footer a {
+        color: white;
     }
 </style>

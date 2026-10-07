@@ -9,9 +9,14 @@
 }
 
 body {
-    background: #161c22;
+    background: linear-gradient(#161c22, #0a1313);
     color: white;
     font-family: "Roboto", serif;
+    min-height: 100%;
+}
+
+html {
+    min-height: 100%;
 }
 
 h1, h2, h3 {
@@ -30,6 +35,14 @@ h1, h2, h3 {
     justify-content: center;
 }
 
+.split-50-50 div {
+    width: 50%;
+}
+
+.max-width {
+    max-width: 750px;
+}
+
 .flex-center {
     display: flex;
     justify-content: center;
@@ -46,5 +59,13 @@ h1, h2, h3 {
 
 .margin-5 {
     margin: 5px
+}
+
+@media screen and (max-width: 700px){
+
+    .split {
+        flex-direction: column;
+    }
+
 }
 

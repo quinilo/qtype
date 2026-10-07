@@ -9,7 +9,7 @@
     let ranks = [
         {
             score: 10,
-            title: "Kannst deine Tastatur auch einfach endsorgen!",
+            title: "Kannst deine Tastatur auch einfach entsorgen!",
             color: "red"
         },
         {
