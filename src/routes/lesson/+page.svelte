@@ -75,7 +75,7 @@
         })
 
         function randomFromPool() {
-            return pool[Math.floor(Math.random()*pool.length)];
+            return pool[Math.floor(Math.random() * pool.length)];
         }
 
         for (let i = 1; i <= 50; i++) {
@@ -83,9 +83,12 @@
             randomizedLesson = randomizedLesson + randomFromPool() + " "
         }
 
-        startLesson(randomizedLesson)
     }
 
+    async function restartLesson() {
+        await inLesson.set(false)
+        startLesson($content)
+    }
 
 </script>
 
@@ -93,7 +96,10 @@
     <Lesson originalText="{$content}">
     </Lesson>
 
-    <button class="btn" on:click={() => {inLesson.set(false)}}>Back to lesson select</button>
+    <div class="split">
+        <button class="btn" on:click={() => {inLesson.set(false)}}>Zurück zur Auswahl</button>
+        <button class="btn" on:click={() => {restartLesson()}}>Übung neu starten</button>
+    </div>
 {:else}
     <section id="select-lesson" class="flex-center">
         <div class="highlight flex-column flex-center ">
@@ -111,7 +117,7 @@
 
 <style>
     button {
-        width: 100% ;
+        width: 100%;
     }
 
     #select-lesson div {
