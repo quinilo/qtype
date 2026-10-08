@@ -25,4 +25,10 @@
     #highscore {
         margin-block: 50px;
     }
+
+    #highscore h2 {
+        background: -webkit-linear-gradient(#0099ff, rgb(165 234 254));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 </style>

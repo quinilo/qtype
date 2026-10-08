@@ -3,7 +3,7 @@
 
 <header class="">
     <nav>
-        <a href="/"><h2>type</h2></a>
+        <a href="/"><h2>qtype</h2></a>
 
         <div>
             <a class="nav-link" href="/learn/10finger">10 Finger System</a>

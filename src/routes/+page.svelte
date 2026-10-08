@@ -5,7 +5,7 @@
 
 <section id="hero">
     <div class="flex-center flex-column">
-        <h1 class="margin-5">Willkommen</h1>
+        <h1 class="margin-5" style="font-size: 40px">Willkommen</h1>
         <p class="secondary margin-5">Verbessere deine Schreibgeschwindigkeit</p>
         <a href="/lesson" class="btn btn-primary">Test starten</a>
     </div>
