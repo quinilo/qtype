@@ -1,12 +1,12 @@
-// place files you want to import through the `#lib` alias in this folder.
 export class statsCookie {
 
     /**
+     * @param {string} name
      * @param {number} score
      */
-    static saveHighscore(score) {
-        if (parseInt(this.getCookie("highscore")) < score || this.getCookie("highscore") === "") {
-            document.cookie = "highscore=" + score
+    static saveHighscore(name, score) {
+        if (parseInt(this.getCookie(name)) < score || this.getCookie(name) === "") {
+            document.cookie = name + "=" + score
         }
 
     }

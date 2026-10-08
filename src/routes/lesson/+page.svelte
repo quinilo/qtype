@@ -1,9 +1,16 @@
 <script>
-    import Lesson from "#lib/component/lesson/Lesson.svelte";
-    import {writable} from "svelte/store";
+// @ts-nocheck
 
+    import Lesson from "#lib/component/lesson/Lesson.svelte";
+    import StarRating from "#lib/component/StarRating.svelte";
+    import {writable} from "svelte/store";
+    import {statsCookie} from "#lib";
+    import {onMount} from "svelte";
+
+    let mounted = writable(false)
     let inLesson = writable(false)
     let content = writable("")
+    let cookieId = writable("")
 
     let lessons = [
         {
@@ -66,9 +73,11 @@
 
     /**
      * @param {string} newContent
+     * @param {string} newCookieId
      */
-    function startLesson(newContent) {
+    function startLesson(newContent, newCookieId) {
         content.set(newContent)
+        cookieId.set(newCookieId)
         inLesson.set(true)
     }
 
@@ -94,58 +103,72 @@
             randomizedLesson = randomizedLesson + randomFromPool() + " "
         }
 
-        startLesson(randomizedLesson)
+        startLesson(randomizedLesson, "randomized")
 
     }
 
     async function restartLesson() {
         await inLesson.set(false)
-        startLesson($content)
+        startLesson($content, $cookieId)
     }
+
+    onMount(() => {
+        mounted.set(true)
+    })
 
 </script>
 
-{#if $inLesson}
-    <Lesson originalText="{$content}">
-    </Lesson>
+{#if $mounted}
+    {#if $inLesson}
 
-    <div class="split">
-        <button class="btn" on:click={() => {inLesson.set(false)}}>Zurück zur Auswahl</button>
-        <button class="btn" on:click={() => {restartLesson()}}>Übung neu starten</button>
-    </div>
-{:else}
-    <section id="select-lesson">
-        <div class="highlight text-center">
-            <h3>Übung auswählen</h3>
-        </div>
+        <Lesson originalText="{$content}" cookieId="{$cookieId}">
+        </Lesson>
 
         <div class="split">
-
-            <div class="highlight flex-column flex-center menu" style="margin-right: 20px">
-                <h3>Einfach</h3>
-                {#each lessons as lesson}
-                    {#if lesson.category === "easy"}
-                        <button class="btn" on:click={() => {startLesson(lesson.content)}}>{lesson.name}</button>
-                    {/if}
-                {/each}
-            </div>
-
-            <div class="highlight flex-column flex-center menu">
-                <h3>Fortgeschritten</h3>
-                {#each lessons as lesson}
-                    {#if lesson.category === "hard"}
-                        <button class="btn" on:click={() => {startLesson(lesson.content)}}>{lesson.name}</button>
-                    {/if}
-                {/each}
-            </div>
-
+            <button class="btn" on:click={() => {inLesson.set(false)}}>Zurück zur Auswahl</button>
+            <button class="btn" on:click={() => {restartLesson()}}>Übung neu starten</button>
         </div>
 
-        <div class="highlight">
-            <button class="btn" on:click={() => {randomLesson()}}>Random</button>
-            <button class="btn" on:click={() => {randomLesson()}}>Custom</button>
-        </div>
-    </section>
+    {:else}
+
+        <section id="select-lesson">
+            <div class="highlight text-center">
+                <h3>Übung auswählen</h3>
+            </div>
+
+            <div class="split">
+
+                <div class="highlight flex-column flex-center menu" style="margin-right: 20px">
+                    <h3>Einfach</h3>
+                    {#each lessons as lesson}
+                        {#if lesson.category === "easy"}
+                            <button class="btn" on:click={() => {startLesson(lesson.content, lesson.name)}}>
+                                {lesson.name} <StarRating score="{statsCookie.getCookie('lesson-' + lesson.name)}"></StarRating>
+                            </button>
+                        {/if}
+                    {/each}
+                </div>
+
+                <div class="highlight flex-column flex-center menu">
+                    <h3>Fortgeschritten</h3>
+                    {#each lessons as lesson}
+                        {#if lesson.category === "hard"}
+                            <button class="btn" on:click={() => {startLesson(lesson.content, lesson.name)}}>
+                                {lesson.name} <StarRating score="{statsCookie.getCookie('lesson-' + lesson.name)}"></StarRating>
+                            </button>
+                        {/if}
+                    {/each}
+                </div>
+
+            </div>
+
+            <div class="highlight">
+                <button class="btn" on:click={() => {randomLesson()}}>Random</button>
+                <button class="btn" on:click={() => {randomLesson()}}>Custom</button>
+            </div>
+        </section>
+
+    {/if}
 {/if}
 
 <style>

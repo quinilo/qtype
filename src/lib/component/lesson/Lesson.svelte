@@ -5,7 +5,7 @@
     import RankBadge from "#lib/component/lesson/RankBadge.svelte";
     import {statsCookie} from "#lib";
 
-    let {originalText = ''} = $props();
+    let {originalText = '', cookieId = ''} = $props();
 
     let text = writable(originalText)
     let ended = writable(false)
@@ -43,7 +43,10 @@
 
             wpm = Math.round((words / seconds) * 60)
 
-            statsCookie.saveHighscore(wpm - errors)
+            let score = wpm - errors
+
+            statsCookie.saveHighscore("highscore", score)
+            statsCookie.saveHighscore("lesson-" + cookieId, score)
 
             ended.set(true)
         }
