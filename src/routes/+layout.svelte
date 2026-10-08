@@ -16,4 +16,7 @@
 
 {@render children()}
 
+<div class="footer-space"></div>
+
 <Footer></Footer>
+

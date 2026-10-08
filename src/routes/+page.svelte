@@ -15,7 +15,12 @@
 
 <Benefits></Benefits>
 
-<div class="footer-space"></div>
+<section id="cta">
+    <div class="highlight text-center">
+        <h3>Na los, worauf wartest du noch?</h3>
+        <p class="secondary">Starte noch heute durch und werde zum Meister an der Tastatur!</p>
+    </div>
+</section>
 
 <style>
     #hero {
@@ -23,7 +28,7 @@
         margin-top: 80px;
     }
 
-    .footer-space {
-        height: 70px;
+    #cta {
+        margin-block: 80px;
     }
 </style>
