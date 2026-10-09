@@ -40,29 +40,34 @@
             "content": "Grummel-brummel-zischel-krach! Wer hat den Keks aus der Dose geklaut? Ein winziger Wichtel mit riesigen Stiefeln stolperte über ein langes Kabel. Zack! Düsenantrieb aktiviert. Der Toaster fliegt jetzt zum Mond. Tschüssi, kleiner Toaster!"
         },
         {
-            "name": "psychedelischer-salat",
-            category: "hard",
-            "content": "Zickzack-Zitter-Aal im Limonaden-Ozean! Fliegende Gurken-Ritter bewerfen die Senf-Festung mit Konfitüre-Kanonen. Warum liegt hier überhaupt Stroh? Egal, knabber an der lila Pixel-Waffel, während die Tasten im Kreis tanzen. Huba-huba-hoppla!"
+            name: "webstorm",
+            category: "easy",
+            content: "Webstorm ist besser als VS Code. Webstorm ist besser als VS Code. Webstorm ist besser als VS Code. Webstorm ist besser als VS Code"
         },
         {
-            "name": "capslock-gemetzel",
+            name: "psychedelischer-salat",
             category: "hard",
-            "content": "wArUm ScHrEiBsT dU nIcHt NoRmAl?! dIeSeS sTeNdEl-dEnDeL-dInG bRiNgT mEiNe FiNgEr ZuM gLüHeN. hIlFe, mein cApSlOcK iSt KaPuTt! oDeR iSt DaS eInFaCh NuR dEr NEUESTE tReNd AuS dEm iNtErNeT? zAcK-zIcK-zUcK-wEg!"
+            content: "Zickzack-Zitter-Aal im Limonaden-Ozean! Fliegende Gurken-Ritter bewerfen die Senf-Festung mit Konfitüre-Kanonen. Warum liegt hier überhaupt Stroh? Egal, knabber an der lila Pixel-Waffel, während die Tasten im Kreis tanzen. Huba-huba-hoppla!"
         },
         {
-            "name": "sonderzeichen-massaker",
+            name: "capslock-gemetzel",
             category: "hard",
-            "content": "@@@ Wichtiges_Update_v2.0_BETA @@@ [Status: !!KRITISCH!!] {Index===>99} ~~~ (Prozent: 42,7%) +++ #HashtagDesWahnsinns ~~~ Kannst du das flüssig tippen? <--- Wenn ja, bist du ein Gott. ---> Oder ein sehr schneller Roboter... (Systemfehler: 0x80070002?!)"
+            content: "wArUm ScHrEiBsT dU nIcHt NoRmAl?! dIeSeS sTeNdEl-dEnDeL-dInG bRiNgT mEiNe FiNgEr ZuM gLüHeN. hIlFe, mein cApSlOcK iSt KaPuTt! oDeR iSt DaS eInFaCh NuR dEr NEUESTE tReNd AuS dEm iNtErNeT? zAcK-zIcK-zUcK-wEg!"
         },
         {
-            "name": "zungenbrecher-galore",
+            name: "sonderzeichen-massaker",
             category: "hard",
-            "content": "Zwischen zwei Zwetschgenzweigen zwitschern zwei geschwätzige Schwalben. Fischers Fritze fischt frische Fische, aber der fiese Friesen-Fürst frittiert faule Flundern flach. Blaukraut bleibt Blaukraut und Brautkleid bleibt Brautkleid. Schneller! Noch schneller!"
+            content: "@@@ Wichtiges_Update_v2.0_BETA @@@ [Status: !!KRITISCH!!] {Index===>99} ~~~ (Prozent: 42,7%) +++ #HashtagDesWahnsinns ~~~ Kannst du das flüssig tippen? <--- Wenn ja, bist du ein Gott. ---> Oder ein sehr schneller Roboter... (Systemfehler: 0x80070002?!)"
         },
         {
-            "name": "dada-diktat",
+            name: "zungenbrecher-galore",
             category: "hard",
-            "content": "Mumpitz im Quadrat! Kladderadatsch! Der Rhabarberkompott-Roboter dekomprimiert die dadaistische Datensuppe. Flupp-di-wupp, das Klappkrokodil klaubt klebrige Kaugummis. Schnickschnack, Humbug, Pustekuchen, Firlefanz und Pipapo. Ende der Durchsage."
+            content: "Zwischen zwei Zwetschgenzweigen zwitschern zwei geschwätzige Schwalben. Fischers Fritze fischt frische Fische, aber der fiese Friesen-Fürst frittiert faule Flundern flach. Blaukraut bleibt Blaukraut und Brautkleid bleibt Brautkleid. Schneller! Noch schneller!"
+        },
+        {
+            name: "dada-diktat",
+            category: "hard",
+            content: "Mumpitz im Quadrat! Kladderadatsch! Der Rhabarberkompott-Roboter dekomprimiert die dadaistische Datensuppe. Flupp-di-wupp, das Klappkrokodil klaubt klebrige Kaugummis. Schnickschnack, Humbug, Pustekuchen, Firlefanz und Pipapo. Ende der Durchsage."
         },
         {
             name: "hello-world",
