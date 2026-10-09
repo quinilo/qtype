@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+    // @ts-nocheck
 
     import Lesson from "#lib/component/lesson/Lesson.svelte";
     import StarRating from "#lib/component/StarRating.svelte";
@@ -11,6 +11,11 @@
     let inLesson = writable(false)
     let content = writable("")
     let cookieId = writable("")
+
+    // svelte-ignore non_reactive_update
+    let customLessonContent
+    // svelte-ignore non_reactive_update
+    let timeBasedLessonMinutes
 
     let lessons = [
         {
@@ -81,7 +86,7 @@
         inLesson.set(true)
     }
 
-    function randomLesson() {
+    function generateRandomLesson(words) {
         /**
          * @type {any[]}
          */
@@ -99,12 +104,24 @@
             return pool[Math.floor(Math.random() * pool.length)];
         }
 
-        for (let i = 1; i <= 50; i++) {
+        for (let i = 1; i <= words; i++) {
             randomizedLesson = randomizedLesson + randomFromPool() + " "
         }
 
-        startLesson(randomizedLesson, "randomized")
+        return randomizedLesson
 
+    }
+
+    function randomLesson() {
+        startLesson(generateRandomLesson(50), "randomized")
+    }
+
+    function customLesson() {
+        startLesson(customLessonContent)
+    }
+
+    function timeBasedLesson() {
+        startLesson(generateRandomLesson(700), "time-based", timeBasedLessonMinutes)
     }
 
     async function restartLesson() {
@@ -143,7 +160,8 @@
                     {#each lessons as lesson}
                         {#if lesson.category === "easy"}
                             <button class="btn" onclick={() => {startLesson(lesson.content, lesson.name)}}>
-                                {lesson.name} <StarRating score={statsCookie.getCookie('lesson-' + lesson.name)}></StarRating>
+                                {lesson.name}
+                                <StarRating score={statsCookie.getCookie('lesson-' + lesson.name)}></StarRating>
                             </button>
                         {/if}
                     {/each}
@@ -154,7 +172,8 @@
                     {#each lessons as lesson}
                         {#if lesson.category === "hard"}
                             <button class="btn" onclick={() => {startLesson(lesson.content, lesson.name)}}>
-                                {lesson.name} <StarRating score={statsCookie.getCookie('lesson-' + lesson.name)}></StarRating>
+                                {lesson.name}
+                                <StarRating score={statsCookie.getCookie('lesson-' + lesson.name)}></StarRating>
                             </button>
                         {/if}
                     {/each}
@@ -164,7 +183,12 @@
 
             <div class="highlight">
                 <button class="btn" onclick={() => {randomLesson()}}>Random</button>
-                <button class="btn" onclick={() => {randomLesson()}}>Custom</button>
+
+                <div class="space"></div>
+
+                <label for="content">Inhalt der Custom lesson</label>
+                <textarea name="content" id="content" cols="30" rows="2" bind:value={customLessonContent}></textarea>
+                <button class="btn" onclick={() => {customLesson()}}>Custom lesson starten</button>
             </div>
         </section>
 
@@ -185,5 +209,20 @@
     .menu {
         width: 100%;
     }
-</style>
 
+    select {
+        margin: 5px;
+        height: 25px;
+    }
+
+    label {
+        color: var(--secondary);
+        margin-left: 5px;
+        margin-top: 200px;
+    }
+
+    .space {
+        height: 5px;
+    }
+
+</style>

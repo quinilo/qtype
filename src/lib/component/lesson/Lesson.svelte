@@ -7,6 +7,7 @@
 
     let {originalText = '', cookieId = ''} = $props();
 
+    // svelte-ignore state_referenced_locally
     let text = writable(originalText)
     let ended = writable(false)
     let started = writable(false)

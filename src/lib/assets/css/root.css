@@ -69,6 +69,20 @@ h1, h2, h3 {
     text-align: center
 }
 
+textarea, select {
+    background-color: rgb(255 255 255 / 0.17);
+    border-radius: 7px;
+    border: 1px solid rgb(255 255 255 / 0.24);
+    width: 100%;
+    color: white;
+}
+
+textarea {
+    border: none;
+    width: 99%;
+    margin-inline: 5px;
+}
+
 hr {
     width: 100%;
     border-radius: 5px;
