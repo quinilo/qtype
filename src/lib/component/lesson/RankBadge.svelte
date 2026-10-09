@@ -3,7 +3,9 @@
 
     let {score} = $props();
 
+    // svelte-ignore non_reactive_update
     let title = "";
+    // svelte-ignore non_reactive_update
     let color = ""
 
     let ranks = [

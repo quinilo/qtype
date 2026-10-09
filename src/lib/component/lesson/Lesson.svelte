@@ -10,8 +10,10 @@
     let text = writable(originalText)
     let ended = writable(false)
     let started = writable(false)
-    let errors = 0
 
+    // svelte-ignore non_reactive_update
+    let errors = 0
+    // svelte-ignore non_reactive_update
     let wpm = 0
 
     onMount(() => {

@@ -52,4 +52,10 @@
     .split div {
         width: 50%;
     }
+
+    @media screen and (max-width: 700px) {
+        img {
+            width: 100%;
+        }
+    }
 </style>

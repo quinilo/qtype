@@ -121,12 +121,12 @@
 {#if $mounted}
     {#if $inLesson}
 
-        <Lesson originalText="{$content}" cookieId="{$cookieId}">
+        <Lesson originalText={$content} cookieId={$cookieId}>
         </Lesson>
 
         <div class="split">
-            <button class="btn" on:click={() => {inLesson.set(false)}}>Zurück zur Auswahl</button>
-            <button class="btn" on:click={() => {restartLesson()}}>Übung neu starten</button>
+            <button class="btn" onclick={() => {inLesson.set(false)}}>Zurück zur Auswahl</button>
+            <button class="btn" onclick={() => {restartLesson()}}>Übung neu starten</button>
         </div>
 
     {:else}
@@ -142,8 +142,8 @@
                     <h3>Einfach</h3>
                     {#each lessons as lesson}
                         {#if lesson.category === "easy"}
-                            <button class="btn" on:click={() => {startLesson(lesson.content, lesson.name)}}>
-                                {lesson.name} <StarRating score="{statsCookie.getCookie('lesson-' + lesson.name)}"></StarRating>
+                            <button class="btn" onclick={() => {startLesson(lesson.content, lesson.name)}}>
+                                {lesson.name} <StarRating score={statsCookie.getCookie('lesson-' + lesson.name)}></StarRating>
                             </button>
                         {/if}
                     {/each}
@@ -153,8 +153,8 @@
                     <h3>Fortgeschritten</h3>
                     {#each lessons as lesson}
                         {#if lesson.category === "hard"}
-                            <button class="btn" on:click={() => {startLesson(lesson.content, lesson.name)}}>
-                                {lesson.name} <StarRating score="{statsCookie.getCookie('lesson-' + lesson.name)}"></StarRating>
+                            <button class="btn" onclick={() => {startLesson(lesson.content, lesson.name)}}>
+                                {lesson.name} <StarRating score={statsCookie.getCookie('lesson-' + lesson.name)}></StarRating>
                             </button>
                         {/if}
                     {/each}
@@ -163,8 +163,8 @@
             </div>
 
             <div class="highlight">
-                <button class="btn" on:click={() => {randomLesson()}}>Random</button>
-                <button class="btn" on:click={() => {randomLesson()}}>Custom</button>
+                <button class="btn" onclick={() => {randomLesson()}}>Random</button>
+                <button class="btn" onclick={() => {randomLesson()}}>Custom</button>
             </div>
         </section>
 
